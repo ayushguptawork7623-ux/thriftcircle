@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThriftCircle</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F8F8F8;
+  color: #1a1a1a;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #F8F8F8;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #4B0082;
+}
+
+.logo span {
+  color: #8B00FF;
+}
+
+.nav-cta {
+  font-size: 14px;
+  color: #4B0082;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.badge {
+  display: inline-block;
+  background: #4B0082;
+  color: #C8F135;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #4B0082;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.sub {
+  font-size: 18px;
+  color: #555;
+  max-width: 580px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.form-wrap {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.form-wrap input {
+  padding: 14px 20px;
+  border: 2px solid #4B0082;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  width: 300px;
+  background: #fff;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.form-wrap input:focus {
+  border-color: #8B00FF;
+}
+
+.btn {
+  background: #4B0082;
+  color: #C8F135;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #3a006e;
+}
+
+.proof {
+  font-size: 14px;
+  color: #888;
+  margin-top: 8px;
+}
+
+.proof strong {
+  color: #4B0082;
+}
+
+.pillars {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  background: #ffffff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.pillar {
+  text-align: center;
+  max-width: 200px;
+}
+
+.pillar-icon {
+  width: 56px;
+  height: 56px;
+  background: #4B0082;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.pillar-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: #C8F135;
+}
+
+.pillar h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #4B0082;
+  margin-bottom: 8px;
+}
+
+.pillar p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.how {
+  padding: 80px 20px;
+  text-align: center;
+  background: #F8F8F8;
+}
+
+.how h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #4B0082;
+  margin-bottom: 48px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 16px;
+  padding: 32px 24px;
+  max-width: 190px;
+  text-align: center;
+}
+
+.step-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #C8F135;
+  background: #4B0082;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.step h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4B0082;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.cta-band {
+  background: #4B0082;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cta-band h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.cta-band p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 32px;
+}
+
+.cta-band input {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  width: 280px;
+  outline: none;
+}
+
+.cta-band .btn {
+  background: #C8F135;
+  color: #4B0082;
+  padding: 14px 28px;
+}
+
+.cta-band .btn:hover {
+  background: #b8e020;
+}
+
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  background: #1a1a1a;
+  color: #C8F135;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+footer span {
+  color: #666;
+  margin: 0 8px;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 34px; }
+  nav { padding: 16px 20px; }
+  .form-wrap input { width: 100%; }
+  .cta-band input { width: 100%; margin-bottom: 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Thrift<span>Circle</span></div>
+  <a href="#join" class="nav-cta">Join waitlist &rarr;</a>
+</nav>
+
+<div class="hero">
+  <div class="badge">Now open for early access</div>
+  <h1>Your campus closet,<br>reimagined.</h1>
+  <p class="sub">Buy, sell, and rent outfits from verified students at your college &mdash; no courier, no strangers, no full price.</p>
+  <div class="form-wrap" id="join">
+    <input type="email" placeholder="your@college.edu" id="emailInput1">
+    <button class="btn" onclick="joinList('emailInput1','proof1')">Join the Waitlist</button>
+  </div>
+  <p class="proof" id="proof1">Join <strong>800+ students</strong> already on the waitlist</p>
+</div>
+
+<div class="pillars">
+  <div class="pillar">
+    <div class="pillar-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg>
+    </div>
+    <h3>Campus-verified only</h3>
+    <p>Sign up with your college email. Every buyer and seller is a real student.</p>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </div>
+    <h3>Pick up on campus</h3>
+    <p>No courier. No waiting. Meet at the canteen or hostel gate.</p>
+  </div>
+  <div class="pillar">
+    <div class="pillar-icon">
+      <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+    </div>
+    <h3>Pay what makes sense</h3>
+    <p>Rs. 150&ndash;500 resale. Rs. 100&ndash;300 for 2&ndash;3 day rentals. UPI in seconds.</p>
+  </div>
+</div>
+
+<div class="how">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Sign up</h4>
+      <p>Verify with your college email. Takes 30 seconds.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>List or browse</h4>
+      <p>Snap a photo, set a price or rental rate, go live instantly.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Pay via UPI</h4>
+      <p>Secure payment, then coordinate pickup on campus over WhatsApp.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Done</h4>
+      <p>New outfit. Empty wardrobe space. Money back in your pocket.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <h2>Ready to clear your closet?</h2>
+  <p>Join the waitlist &mdash; free forever for students.</p>
+  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;">
+    <input type="email" placeholder="your@college.edu" id="emailInput2">
+    <button class="btn" onclick="joinList('emailInput2','proof2')">Join the Waitlist</button>
+  </div>
+  <p style="color:#aaa;font-size:13px;margin-top:16px;" id="proof2">No spam. No fees. Just your campus closet.</p>
+</div>
+
+<footer>
+  thriftcircle.in <span>|</span> @thriftcircle <span>|</span> Built for campus, by campus
+</footer>
+
+<script>
+function joinList(inputId, proofId) {
+  var email = document.getElementById(inputId).value;
+  if (!email || email.indexOf('@') === -1) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  document.getElementById(proofId).innerHTML = "You are on the list! We will be in touch soon.";
+  document.getElementById(inputId).value = '';
+}
+</script>
+
+</body>
+</html>
